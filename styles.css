@@ -70,16 +70,26 @@ body {
   opacity: 0.9;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* You can replace this with a mobile nav later */
+.nav-links{display:flex;gap:20px;}
+.menu-toggle{display:none;}
+
+@media (max-width:768px){
+  .menu-toggle{
+    display:block;            /* icon visible */
   }
 
-  .hero-content h1 {
-    font-size: 2rem;
+  /* dropdown hidden until .open appears */
+  .nav-links{
+    position:absolute;
+    top:100%; right:0;
+    width:100%;
+    background:rgb(1,101,231);
+    flex-direction:column;
+    align-items:center;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
   }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
+  .nav-links.open{max-height:320px;}   /* slides down */
+  .nav-links li{padding:15px 0;}
 }
