@@ -18,7 +18,9 @@ body {
   z-index: 1000;          /* ensure it sits above hero */
   display: flex;
   justify-content: right;
-  background: rgb(1, 101, 231);
+   background: rgba(255,255,255,.15);          /* 15 %‑opaque white */
+  backdrop-filter: blur(12px);                /* glassy blur */
+  -webkit-backdrop-filter: blur(12px);        /* Safari/iOS */
   padding: 20px 10%;
 }
 
@@ -35,13 +37,16 @@ body {
 }
 
 .hero{
-  background: rgb(1, 101, 231);
+  background-image: url(Images/hero.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   text-align: center;
   padding: 220px 20px 25.2%;   
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 5rem;
   margin-bottom: 10px;
   color: #ffffff;
 }
@@ -68,6 +73,35 @@ body {
 
 .hero-buttons .btn:hover {
   opacity: 0.9;
+}
+
+.Reason{
+  display: flex;
+  justify-content: center;
+}
+
+.Reason-images {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 200px;
+  padding: 40px 20px;
+  flex-wrap: wrap; /* good for small screens */
+}
+
+.reason-box {
+  text-align: center;
+}
+
+.reason-box img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.reason-box p {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #1f3a93;
 }
 
 .nav-links{display:flex;gap:20px;}
