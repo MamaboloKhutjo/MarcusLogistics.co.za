@@ -11,7 +11,7 @@ body {
 }
 
 .navbar{
-  position: fixed;        /* stay at top while scrolling */
+  position:absolute ;        /* stay at top while scrolling */
   top: 0;
   left: 0;
   width: 100%;
@@ -158,11 +158,19 @@ body {
   }
 
   /* dropdown hidden until .open appears */
+
+  .navbar{
+    position: fixed;
+    background: none;          /* 15 %‑opaque white */
+    backdrop-filter: blur(0px);                /* glassy blur */
+    -webkit-backdrop-filter: blur(0px);        /* Safari/iOS */
+  }
   .nav-links{
     position:absolute;
-    top:100%; right:0;
-    width:100%;
-    background:rgb(1,101,231);
+    top:100%; right:0; left: 50%;
+    width:50%;
+    background: #1f3a93ce;
+    border-radius: 10%;
     flex-direction:column;
     align-items:center;
     max-height:0;
