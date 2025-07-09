@@ -28,6 +28,8 @@ body {
   list-style: none;
   display: flex;
   gap: 20px;
+
+  
 }
 
 .nav-links li a {
@@ -37,7 +39,7 @@ body {
 }
 
 .hero{
-  background-image: url(Images/hero.png);
+  background-image: url(Images/Hero.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -54,6 +56,7 @@ body {
 .hero-content p {
   font-size: 1.1rem;
   margin-bottom: 25px;
+  color: #ffffff;
 }
 
 .hero-buttons .btn {
@@ -80,10 +83,16 @@ body {
   justify-content: center;
 }
 
+.Reason h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Reason-images {
   display: flex;
   justify-content: space-evenly;
-  gap: 200px;
+  gap: 100px;
   padding: 40px 20px;
   flex-wrap: wrap; /* good for small screens */
 }
@@ -98,18 +107,54 @@ body {
   margin-bottom: 10px;
 }
 
-.reason-box p {
+.reason-box h3 {
   font-size: 2rem;
   font-weight: 500;
   color: #1f3a93;
 }
 
 .nav-links{display:flex;gap:20px;}
-.menu-toggle{display:none;}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 1001;
+}
 
 @media (max-width:768px){
-  .menu-toggle{
-    display:block;            /* icon visible */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: rgb(231, 147, 14);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
   }
 
   /* dropdown hidden until .open appears */
@@ -124,6 +169,32 @@ body {
     overflow:hidden;
     transition:max-height .3s ease;
   }
-  .nav-links.open{max-height:320px;}   /* slides down */
-  .nav-links li{padding:15px 0;}
+  .nav-links.open{
+    max-height:320px;
+    transition: max-height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.3s ease;
+    opacity: 0;
+  }
+
+  .nav-links.open {
+    max-height: 320px;
+    opacity: 1;
+}
+
+  .nav-links li {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-links.open li {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Stagger the animation for each item */
+.nav-links.open li:nth-child(1) { transition-delay: 0.1s; }
+.nav-links.open li:nth-child(2) { transition-delay: 0.2s; }
+.nav-links.open li:nth-child(3) { transition-delay: 0.3s; }
+.nav-links.open li:nth-child(4) { transition-delay: 0.4s; }
+.nav-links.open li:nth-child(5) { transition-delay: 0.5s; }
 }
