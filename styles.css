@@ -39,7 +39,7 @@ body {
 }
 
 .hero{
-  background-image: url(Images/Hero.png);
+  background-image: url(Images/Hero_image.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
