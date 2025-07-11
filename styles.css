@@ -18,7 +18,7 @@ body {
   z-index: 1000;          /* ensure it sits above hero */
   display: flex;
   justify-content: right;
-   background: rgba(255,255,255,.15);          /* 15 %‑opaque white */
+   background: #2222227c;          /* 15 %‑opaque white */
   backdrop-filter: blur(12px);                /* glassy blur */
   -webkit-backdrop-filter: blur(12px);        /* Safari/iOS */
   padding: 20px 10%;
@@ -55,12 +55,14 @@ body {
   font-size: 5rem;
   margin-bottom: 10px;
   color: #ffffff;
+  font-weight: bolder;
 }
 
 .hero-content p {
   font-size: 1.1rem;
   margin-bottom: 25px;
   color: #ffffff;
+  font-weight: bold;
 }
 
 .hero-buttons .btn {
@@ -80,6 +82,66 @@ body {
 
 .hero-buttons .btn:hover {
   opacity: 0.9;
+}
+
+/* About Us Section Styles */
+.About-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: #ebebeb;
+}
+
+.About-us h1 {
+  font-size: 2.5rem;
+  color: #1f3a93;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+}
+
+.About-us h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ffc107;
+  margin: 15px auto 0;
+}
+
+.About-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.About-content img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #1f3a93;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.About-content div {
+  flex: 1;
+}
+
+.About-content h3 {
+  font-size: 1.8rem;
+  color: #1f3a93;
+  margin-bottom: 15px;
+}
+
+.About-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .Reason{
@@ -138,7 +200,7 @@ body {
   display: block;
   width: 80px;
   height: 4px;
-  background: #87ceeb;
+  background: #ffc107;
   margin: 15px auto 0;
 }
 
@@ -262,7 +324,7 @@ body {
 }
 
 .Footer-contact{
-  color: #ffffff;
+  color: #ffffff00;
 }
 
 .footer-bottom {
@@ -403,6 +465,33 @@ body {
     max-width: 250px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .About-us {
+    padding: 60px 20px;
+  }
+  
+  .About-us h1 {
+    font-size: 2rem;
+  }
+  
+  .About-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .About-content img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .About-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .About-content p {
+    font-size: 1rem;
   }
 
   /* Why Choose Us Section */
