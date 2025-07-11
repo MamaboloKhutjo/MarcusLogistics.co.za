@@ -594,8 +594,6 @@ body {
   .About-content p {
     font-size: 1rem;
   }
-
-  /* Why Choose Us Section */
   .Reason h1 {
     font-size: 2rem;
     padding: 0 20px;
@@ -684,7 +682,6 @@ body {
   animation: fadeIn 0.6s ease forwards;
   opacity: 0;
 }
-
  .booking-section {
         padding: 80px 15px;
     }
